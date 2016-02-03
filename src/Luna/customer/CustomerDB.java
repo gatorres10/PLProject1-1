@@ -5,6 +5,7 @@ public class CustomerDB {
     public static String getCustomer(int idNum){
         Customer storeCustomer = new Customer();
         String output;
+        // create array or anything that will store the customer object
 
         if (idNum == 1001){
             storeCustomer.setName("Barbara White");

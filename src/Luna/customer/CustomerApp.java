@@ -22,7 +22,7 @@ public class CustomerApp {
 
             System.out.println("\nDisplay another customer? (y/n): ");
             String inPut = sc.next();
-            if (inPut == "n"){
+            if (inPut.equals("n")){
                 keepGoing = false;
 
             }
