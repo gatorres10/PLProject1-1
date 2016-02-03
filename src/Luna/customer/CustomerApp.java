@@ -2,19 +2,31 @@ package Luna.customer;
 
 import java.util.Scanner;
 
-/**
- * Created by emmittluna on 2/2/16.
- */
+
 public class CustomerApp {
     public static void main(String[] args) {
 
-        System.out.println("Hello Dude\n");
-        System.out.println("Enter Your number: ");
+
+        System.out.println("Welcome to the Customer Viewer\n");
+
+        boolean keepGoing = true;
         Scanner sc = new Scanner(System.in);
-        int customerNumber = sc.nextInt();
-        System.out.println("Your ID is: " + customerNumber);
 
+        while (keepGoing){
+            System.out.println("Enter a customer number: ");
+            int customerNumber = sc.nextInt();
 
+            CustomerDB targetCustomer = new CustomerDB();
+            String data = targetCustomer.getCustomer(customerNumber);
+            System.out.println(data);
+
+            System.out.println("\nDisplay another customer? (y/n): ");
+            String inPut = sc.next();
+            if (inPut == "n"){
+                keepGoing = false;
+
+            }
+
+        }
     }
-
 }
